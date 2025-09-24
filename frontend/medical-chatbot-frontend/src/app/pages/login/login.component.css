@@ -1,0 +1,62 @@
+.login-container {
+  width: 350px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1976d2;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:disabled {
+  background-color: #90caf9;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+/* ✅ Switch to Signup link styles */
+.switch-page {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.switch-page a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.switch-page a:hover {
+  text-decoration: underline;
+}

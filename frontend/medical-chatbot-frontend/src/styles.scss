@@ -1,0 +1,26 @@
+/* Background styles for entire screen */
+body {
+    background-image: url('assets/ai_image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Light/Dark overlays */
+  body.light-theme::before,
+  body.dark-theme::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-color: rgba(255, 255, 255, 0.6); /* light blur */
+    backdrop-filter: blur(6px);
+  }
+  
+  body.dark-theme::before {
+    background-color: rgba(0, 0, 0, 0.6); /* dark blur */
+  }
+  

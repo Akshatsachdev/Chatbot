@@ -1,0 +1,41 @@
+<div class="signup-container">
+  <h2>Signup</h2>
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" formControlName="username" placeholder="Enter username" />
+      <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" class="error">
+        Username is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" formControlName="password" placeholder="Enter password" />
+      <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error">
+        Password is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="password" formControlName="confirmPassword" placeholder="Confirm password" />
+      <div *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched" class="error">
+        Confirm Password is required.
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+    <button type="submit" [disabled]="signupForm.invalid">Signup</button>
+  </form>
+
+  <!-- ✅ Switch to Login link -->
+  <div class="switch-page">
+    Already have an account?
+    <a routerLink="/login">Login here</a>
+  </div>
+</div>

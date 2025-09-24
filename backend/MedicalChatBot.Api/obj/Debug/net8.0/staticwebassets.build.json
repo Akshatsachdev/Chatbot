@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "jqAHbxRiFRDyFisD7MNmxDKPCUTyJlykOmQhAfC+9J8=",
+  "Source": "MedicalChatBot.Api",
+  "BasePath": "_content/MedicalChatBot.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

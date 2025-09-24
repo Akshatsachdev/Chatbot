@@ -1,0 +1,65 @@
+<!-- Outer container -->
+<div class="chat-container">
+
+  <!-- Sidebar (static, no dark mode) -->
+  <div class="sidebar">
+    <div class="sidebar-header">{{ username }}</div>
+
+    <button (click)="startNewChat()" class="new-chat-btn">+ New Chat</button>
+
+    <div class="previous-chats">
+      <div 
+        *ngFor="let chat of previousChats"
+        [class.active]="chat.sessionId === activeSessionId"
+        (click)="loadChat(chat.sessionId)"
+        class="chat-item">
+        {{ chat.title }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Chat Area (changes color on dark mode) -->
+  <div class="main-chat" [ngClass]="isDarkMode ? 'dark-mode' : 'light-mode'">
+
+    <!-- Theme Toggle Button -->
+    <button (click)="toggleTheme()" class="theme-toggle-btn">
+      {{ isDarkMode ? '☀️' : '🌙' }}
+    </button>
+
+    <!-- Chat messages -->
+    <div class="chat-body" #chatContainer>
+      <div *ngFor="let chat of chatMessages">
+        <div [ngClass]="chat.sender === 'user' ? 'user-message' : 'bot-message'">
+          <span [innerHTML]="chat.message"></span>
+        </div>
+      </div>
+
+      <div *ngIf="isLoading" class="bot-typing">
+        Bot is typing<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="chat-footer" [ngClass]="isDarkMode ? 'dark-mode' : 'light-mode'">
+      <input
+        type="text"
+        [(ngModel)]="messageText"
+        (keyup.enter)="sendMessage()"
+        placeholder="Type your message..."
+      />
+
+      <input type="file" (change)="onFileSelected($event)" class="file-upload" />
+
+      <div *ngIf="selectedFile" class="file-info">
+        📄 Selected: {{ selectedFile.name }}
+      </div>
+
+      <div *ngIf="uploadStatus" class="upload-status">
+        {{ uploadStatus }}
+      </div>
+
+      <button (click)="sendMessage()">Send</button>
+    </div>
+
+  </div>
+</div>
