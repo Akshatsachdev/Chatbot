@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 # Ignore build outputs
 bin/
 obj/
 node_modules/
 *.log
 .vs/
+=======
+# Ignore build outputs
+bin/
+obj/
+node_modules/
+*.log
+.vs/
+>>>>>>> 02b88a2 (Initial commit - AI Chatbot with ASP.NET Core, Angular, PostgreSQL, LLaMA 3)
